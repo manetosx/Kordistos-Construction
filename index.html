@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="el">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" type="text/css" media="screen">
+    <link rel="apple-touch-icon" sizes="57x57" href="images/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="images/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+    <link rel="manifest" href="images/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="images/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "uWtcDyN9c9gv_afVd",
+        });
+    })();
+    </script>
+    <title>Kordistos Construction</title>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <img src="images/logo.jpg" width="130" height="80" id="logo" alt="">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Αρχική</a></li>
+                    <li><a href="#services">Υπηρεσίες</a></li>
+                    <li><a href="#about">Προφίλ</a></li>
+                    <li><a href="#gallery">Φωτογραφίες</a></li>
+                    <li><a href="#contact">Επικοινωνία</a></li>
+                </ul>
+                <div class="hamburger">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Αυτοκατανάλωση Ενέργειας</h1>
+                <p>Η εταιρεία μας αναλαμβάνει την μελέτη και εγκατάσταση φωτοβολταϊκών συστημάτων του νέου προγράμματος αυτοκατανάλωσης ενέργειας (NET BILLING) που αφορά όλες τις κατηγορίες καταναλωτών (οικιακούς, εμπορικούς, αγρότες, ΟΤΑ, Ενεργειακές Κοινότητες). Για περισσότερες πληροφορίες θα μας βρείτε στην έδρα μας στο Μαρμαρωτό.</p>
+                <a href="#contact" class="btn">Επικοινωνήστε μαζί μας</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Υπηρεσίες</h2>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="images/gear.png" alt="">
+                    <h3>Ηλεκτρομηχανολογικές Μελέτες - Με Επίβλεψη</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.</p>
+                </div>
+                <div class="service-card">
+                    <img src="images/energy.png" alt="">
+                    <h3>Ενεργειακές Μελέτες</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.</p>
+                </div>
+                <div class="service-card">
+                    <img src="images/technical.png" alt="">
+                    <h3>Τεχνικός Ασφάλειας</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.</p>
+                </div>
+                <div class="service-card">
+                    <img src="images/ecology.png" alt="">
+                    <h3>Μελέτες Περιβάλλοντος</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.</p>
+                </div>
+                <div class="service-card">
+                    <img src="images/licencse.png" alt="">
+                    <h3>Άδειες Λειτουργίας Καταστημάτων</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.</p>
+                </div>
+                <div class="service-card">
+                    <img src="images/supervisor.png" alt="">
+                    <h3>Επιβλέψεις Κατασκευαστικών Έργων</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Ποιοί είμαστε</h2>
+                <p>Μάθετε περισσότερα για την εταιρεία μας και τι μας κάνει να διαφέρουμε από τον ανταγωνισμό.</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Kordistos Construction</h3>
+                    <p>Στο τεχνικό γραφείο μας, συνδυάζουμε επιστήμη, καινοτομία και ακρίβεια για να προσφέρουμε ολοκληρωμένες λύσεις υψηλής τεχνικής ποιότητας. Ιδρυμένο από τους αδερφούς Χαράλαμπο Κορδιστό και Δημήτριο Κορδιστό, το γραφείο μας διαθέτει εμπειρία σε πολυδιάστατους τομείς της μηχανολογίας, των ορυκτών πόρων και του περιβάλλοντος.<br><br>
+                    Χαράλαμπος Κορδιστός: Μηχανολόγος Μηχανικός Τ.Ε. , ειδικεύεται στις ηλεκτρομηχανολογικές μελέτες, την επίβλεψη κατασκευαστικών έργων και τις ενεργειακές επιθεωρήσεις. Με προσεκτική ανάλυση και τεχνική ακρίβεια, εγγυάται τη βέλτιστη λειτουργία και αξιοπιστία κάθε έργου. <br><br>
+                    Δημήτριος Κορδιστός: Διπλωματούχος Μηχανικός Ορυκτών Πόρων, φέρνει στο τραπέζι εξειδίκευση σε μελέτες περιβάλλοντος, γεωτεχνικά & γεωλογικά έργα και οικονομοτεχνικές αναλύσεις. Η γνώση του στη βιώσιμη αξιοποίηση πόρων και στις περιβαλλοντικές λύσεις ενισχύει την ολοκληρωμένη προσέγγιση των έργων μας. <br><br>                    Στο Τεχνικό Γραφείο Κορδιστού, πιστεύουμε ότι κάθε έργο αξίζει αξιοπιστία, δημιουργικότητα και προσοχή στη λεπτομέρεια. Εργαζόμαστε για να μετατρέψουμε τις ιδέες σας σε ακριβείς και αποτελεσματικές τεχνικές λύσεις. <br><br>Από σχέδια και μελέτες έως επίβλεψη και ενεργειακή βελτιστοποίηση, η συνεργασία μας προσφέρει:
+                    <ul>
+                        <li>Ολοκληρωμένες τεχνικές λύσεις</li>
+                        <li>Προσαρμοσμένες μελέτες<br> (μηχανολογικές, περιβαλλοντικές, ενεργειακές)</li>
+                        <li>Επαγγελματική επίβλεψη έργων</li>
+                        <li>Βιώσιμες και οικονομοτεχνικά αποδοτικές προτάσεις</li>
+                    </ul></p>
+                    <a href="#contact" class="btn">Μάθετε περισσότερα</a>
+                </div>
+                <div class="about-image">
+                    <img src="images/picture1.jpg" alt="Our Team"> <br><br>
+                    <img src="images/picture2.jpg" alt="Our Team">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-title">
+                <h2>Φωτογραφίες</h2>
+                <p>Ρίξτε μια ματιά σε μερικές από τις πρόσφατες εργασίες και τα έργα που έχουμε ολοκληρώσει για τους πελάτες μας.</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="images/construction-site1.webp" alt="Project 1">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/construction-site2.webp" alt="Project 2">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/construction-site3.webp" alt="Project 3">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/construction-site4.webp" alt="Project 4">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/construction-site5.webp" alt="Project 5">
+                </div>
+                <div class="gallery-item">
+                    <img src="images/construction-site6.webp" alt="Project 6">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Επικοινωνήστε μαζί μας</h2>
+                <p>Επικοινωνήστε μαζί μας για οποιεσδήποτε ερωτήσεις ή απορίες. Θα χαρούμε πολύ να σας ακούσουμε!</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Όνομα</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Τηλέφωνο</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="name">Θέμα</label>
+                            <input type="text" id="subject" name="subject" required>
+                        </div>
+
+
+                        <div class="form-group">
+                            <label for="message">Μήνυμα</label>
+                            <textarea id="message" name="message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Αποστολή</button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <div class="contact-info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Διεύθυνση</h3>
+                            <p>Μαρμαρωτό , Κως</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Τηλέφωνο</h3>
+                            <p>2242181345</p>
+                        </div>
+                    </div>
+                    <div class="contact-info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>kordistosconstruction@gmail.com</p>
+                        </div>
+                    </div>
+                    <div class="social-links">
+                        <a href="https://www.facebook.com/profile.php?id=61561476870707"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://www.instagram.com/kordistos_construction/"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="year"></span> Kordistos Construction. All Rights Reserved.</p>
+            <p>Created by Christos Kordistos</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const hamburger = document.querySelector('.hamburger');
+        const navLinks = document.querySelector('.nav-links');
+        
+        hamburger.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+        
+                setTimeout(() => {
+                    const target = document.querySelector(this.getAttribute('href'));
+                    window.scrollTo({
+                        top: target.offsetTop - 80,
+                        behavior: 'smooth',
+                        block: 'start',
+                        inline: 'nearest'
+                    });
+                }, 300); // 300ms delay
+                
+                // Force slower scroll speed (works in most modern browsers)
+                const style = document.createElement('style');
+                style.innerHTML = 'html { scroll-behavior: smooth !important; scroll-duration: 1000ms !important; }';
+                document.head.appendChild(style);
+            });
+        });
+        
+        // Update copyright year
+        document.getElementById('year').textContent = new Date().getFullYear();
+        
+        // Form submission
+        
+        //const contactForm = document.getElementById('contactForm');
+        document.addEventListener('DOMContentLoaded', function() {
+            const contactForm = document.getElementById('contactForm');
+
+            contactForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+        
+                // Show loading state
+                const submitBtn = contactForm.querySelector('button[type="submit"]');
+                const originalBtnText = submitBtn.textContent;
+                submitBtn.textContent = 'Sending...';
+                submitBtn.disabled = true;
+                
+                // Prepare form data
+                const formData = {
+                    from_name: document.getElementById('name').value,
+                    from_email: document.getElementById('email').value,
+                    phone: document.getElementById('phone').value,
+                    subject: document.getElementById('subject').value,
+                    message: document.getElementById('message').value
+                };
+                
+                // Send email using EmailJS
+                emailjs.send('service_bmbhxk6', 'template_cx4oxe7', formData)
+                    .then(function(response) {
+                        // Success - show thank you message or redirect
+                        //alert('Message sent successfully! We will contact you soon.');
+                        contactForm.reset();
+                        
+                        // Optionally redirect to thank you page
+                        window.location.href = 'thank-you.html';
+                    }, function(error) {
+                        // Error - show error message
+                        alert('Failed to send message. Please try again later.');
+                        console.error('EmailJS error:', error);
+                    })
+                    .finally(function() {
+                        // Reset button state
+                        submitBtn.textContent = originalBtnText;
+                        submitBtn.disabled = false;
+                    });
+            });
+        });
+    </script>
+</body>
+</html>
