@@ -94,7 +94,7 @@
         }
         
         .hero-content h1 {
-            color: white;
+            color: #EAE0C8;
             font-size: 3rem;
             margin-bottom: 20px;
         }
@@ -102,7 +102,7 @@
         .hero-content p {
             font-size: 1.2rem;
             margin-bottom: 30px;
-            color: #EAE0C8;
+            color: white;
         }
         
         .btn {
