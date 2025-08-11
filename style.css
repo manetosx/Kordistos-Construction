@@ -86,7 +86,7 @@
             align-items: center;
             text-align: center;
             padding-top: 80px;
-            background: linear-gradient(0deg, rgba(42, 33, 14, 0.55), rgba(42, 33, 14, 0.74)), url(images/solarPanels.jpg);
+            background: linear-gradient(0deg, rgba(42, 33, 14, 0.55), rgba(42, 33, 14, 0.74)), url(images/background.jpg);
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
