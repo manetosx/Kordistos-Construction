@@ -326,6 +326,21 @@
 
         
         /* Contact section */
+
+        .contact-link {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: inline-block;
+            padding: 2px 0;
+            border-bottom: 1px solid transparent;
+        }
+        
+        .contact-link:hover {
+            color: var(--primary-color);
+            border-bottom: 1px solid var(--primary-color);
+        }
+
         .contact {
             background-color: var(--light-color);
         }
@@ -585,6 +600,29 @@
             
             .hero .btn {
                 padding: 0.7rem 1.8rem;
+            }
+
+            .contact-info-item {
+                position: relative;
+            }
+            
+            .contact-info-item a::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+            }
+            
+            .contact-info-item i {
+                position: relative;
+                z-index: 1;
+            }
+            
+            .contact-info-item div {
+                position: relative;
+                z-index: 1;
             }
         }
 
