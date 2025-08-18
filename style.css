@@ -647,11 +647,6 @@
                 grid-template-columns: 2fr;
                 gap: 3rem;
             }
-            
-            .about-image {
-                order: -1;
-            }
-            
         }
 
         @media (max-width: 576px) {
