@@ -412,6 +412,42 @@
                     });
             });
         });
+            // Lightbox functionality
+            document.addEventListener('DOMContentLoaded', function() {
+                const galleryImages = document.querySelectorAll('.gallery-image');
+                const lightbox = document.querySelector('.lightbox');
+                const lightboxImg = document.getElementById('lightbox-img');
+                const closeBtn = document.querySelector('.close-btn');
+                const captionText = document.querySelector('.caption');
+        
+            // Open lightbox
+            galleryImages.forEach(img => {
+                img.addEventListener('click', function() {
+                    lightbox.style.display = "block";
+                    lightboxImg.src = this.src;
+                    captionText.textContent = this.alt;
+                });
+            });
+            
+            // Close lightbox
+            closeBtn.addEventListener('click', function() {
+                lightbox.style.display = "none";
+            });
+            
+            // Close when clicking outside image
+            lightbox.addEventListener('click', function(e) {
+                if (e.target !== lightboxImg && e.target !== captionText) {
+                    lightbox.style.display = "none";
+                }
+            });
+            
+            // Close with ESC key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === "Escape") {
+                    lightbox.style.display = "none";
+                }
+            });
+        });
     </script>
 </body>
 </html>
