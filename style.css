@@ -644,7 +644,7 @@
             }
 
             .about-content {
-                grid-template-columns: 1fr;
+                grid-template-columns: 2fr;
                 gap: 3rem;
             }
             
