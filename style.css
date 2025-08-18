@@ -232,7 +232,6 @@
         .gallery-item {
             position: relative;
             overflow: hidden;
-            object-fit: scale-down;
             border-radius: 5px;
             height: 250px;
         }
