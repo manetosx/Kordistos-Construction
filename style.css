@@ -654,6 +654,22 @@
             header {
                 position: relative;
             }
+            /* Hide about section images on tablets and phones */
+            .about-image {
+                display: none !important;
+            }
+            
+            /* Optional: Adjust text container to take full width */
+            .about-text {
+                width: 100%;
+                text-align: center; /* Center text when image is hidden */
+                padding: 0 15px;
+            }
+            
+            /* If you're using grid layout, adjust it */
+            .about-content {
+                display: block !important; /* Override any grid/flex layouts */
+            }
         }
 
         /* Small Mobile Devices */
