@@ -642,31 +642,6 @@
             .hero-content p {
                 margin-bottom: 2rem;
             }
-
-            .about-content {
-                display: grid;
-                grid-template-columns: 1fr 1fr; /* Two equal columns */
-                gap: 30px; /* Space between columns */
-                align-items: center; /* Vertical alignment */
-            }
-        
-            .about-text {
-                order: 1; /* Text first on left */
-                padding-right: 15px; /* Spacing from image */
-            }
-        
-            .about-image {
-                order: 2; /* Image second on right */
-                padding-left: 15px; /* Spacing from text */
-            }
-        
-            .about-image img {
-                width: 100%;
-                height: auto;
-                max-height: 400px; /* Control image height */
-                object-fit: cover; /* Maintain aspect ratio */
-                border-radius: 8px;
-            }
         }
 
         @media (max-width: 576px) {
