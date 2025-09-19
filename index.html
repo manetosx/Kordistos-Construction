@@ -167,16 +167,32 @@
                 <p>Ρίξτε μια ματιά σε μερικές από τις πρόσφατες εργασίες και τα έργα που έχουμε ολοκληρώσει για τους πελάτες μας.</p>
             </div>
 
-            <!-- Category Filters -->
-            <div class="gallery-filters">
+            <!-- Desktop Filter Buttons -->
+        <div class="gallery-filters desktop-filters">
+            <button class="filter-btn active" data-filter="all">Όλα τα Projects</button>
+            <button class="filter-btn" data-filter="solar">Φωτοβολταϊκά</button>
+            <button class="filter-btn" data-filter="construction">Οικοδομικές εργασίες</button>
+            <button class="filter-btn" data-filter="electrical">Ηλεκτρολογικά</button>
+            <button class="filter-btn" data-filter="pump">Αντλίες θερμότητας</button>
+            <button class="filter-btn" data-filter="plan">Σχέδια οικοδομικών αδειών</button>
+        </div>
+
+
+        <!-- Mobile Filter Dropdown -->
+        <div class="mobile-filter-container">
+            <button class="mobile-filter-toggle" id="mobileFilterToggle">
+                <span>Όλα τα Projects</span>
+                <i class="fas fa-chevron-down"></i>
+            </button>
+            <div class="mobile-filter-dropdown" id="mobileFilterDropdown">
                 <button class="filter-btn active" data-filter="all">Όλα τα Projects</button>
                 <button class="filter-btn" data-filter="solar">Φωτοβολταϊκά</button>
                 <button class="filter-btn" data-filter="construction">Οικοδομικές εργασίες</button>
                 <button class="filter-btn" data-filter="electrical">Ηλεκτρολογικά</button>
                 <button class="filter-btn" data-filter="pump">Αντλίες θερμότητας</button>
                 <button class="filter-btn" data-filter="plan">Σχέδια οικοδομικών αδειών</button>
-
             </div>
+        </div>
 
             <!-- Gallery Grid with Categories -->
             <div class="gallery-grid">
@@ -328,7 +344,14 @@
                             <label for="message">Μήνυμα</label>
                             <textarea id="message" name="message" required></textarea>
                         </div>
-                        <button type="submit" class="btn">Αποστολή</button>
+
+                         <!-- reCAPTCHA and Button Container -->
+                        <div class="recaptcha-container">
+                            <div class="g-recaptcha" data-sitekey="6LfMfs0rAAAAAKttHZrtMr9jyCDjbvBcP2MKjNYL"></div>
+                            <div class="recaptcha-btn-container">
+                                <button type="submit" class="btn">Αποστολή</button>
+                            </div>
+                        </div>
                     </form>
                 </div>
                 <div class="contact-info">
@@ -379,6 +402,9 @@
         </div>
     </footer>
 
+
+    <!-- JAVASCRIPT -->
+
     <script>
         // Mobile menu toggle
         const hamburger = document.querySelector('.hamburger');
@@ -420,19 +446,34 @@
         // Update copyright year
         document.getElementById('year').textContent = new Date().getFullYear();
         
-        // Form submission
-        
-        //const contactForm = document.getElementById('contactForm');
+
+        // Add this to your existing JavaScript
+        const RECAPTCHA_SITE_KEY = '6LfMfs0rAAAAAKttHZrtMr9jyCDjbvBcP2MKjNYL';
+        const RECAPTCHA_SECRET_KEY = '6LfMfs0rAAAAAChUE98E1TqPRlWCK2EiCcVJD4op';
+
+        // Form submission with reCAPTCHA validation
         document.addEventListener('DOMContentLoaded', function() {
             const contactForm = document.getElementById('contactForm');
 
+            // Load reCAPTCHA script dynamically
+            const recaptchaScript = document.createElement('script');
+            recaptchaScript.src = 'https://www.google.com/recaptcha/api.js';
+            document.head.appendChild(recaptchaScript);
+
             contactForm.addEventListener('submit', function(e) {
                 e.preventDefault();
-        
+                
+                // Validate reCAPTCHA
+                const recaptchaResponse = grecaptcha.getResponse();
+                if (!recaptchaResponse) {
+                    alert('Please complete the CAPTCHA verification');
+                    return;
+                }
+                
                 // Show loading state
                 const submitBtn = contactForm.querySelector('button[type="submit"]');
                 const originalBtnText = submitBtn.textContent;
-                submitBtn.textContent = 'Sending...';
+                submitBtn.textContent = 'Αποστολή...';
                 submitBtn.disabled = true;
                 
                 // Prepare form data
@@ -441,15 +482,17 @@
                     from_email: document.getElementById('email').value,
                     phone: document.getElementById('phone').value,
                     subject: document.getElementById('subject').value,
-                    message: document.getElementById('message').value
+                    message: document.getElementById('message').value,
+                    'g-recaptcha-response': recaptchaResponse
                 };
                 
                 // Send email using EmailJS
                 emailjs.send('service_bmbhxk6', 'template_cx4oxe7', formData)
                     .then(function(response) {
                         // Success - show thank you message or redirect
-                        //alert('Message sent successfully! We will contact you soon.');
                         contactForm.reset();
+                        // Reset reCAPTCHA
+                        grecaptcha.reset();
                         
                         // Optionally redirect to thank you page
                         window.location.href = 'thank-you.html';
@@ -457,6 +500,8 @@
                         // Error - show error message
                         alert('Failed to send message. Please try again later.');
                         console.error('EmailJS error:', error);
+                        // Reset reCAPTCHA
+                        grecaptcha.reset();
                     })
                     .finally(function() {
                         // Reset button state
@@ -536,6 +581,87 @@
                             }, 300);
                         }
                     });
+                });
+            });
+        });
+
+        // Mobile filter functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileFilterToggle = document.getElementById('mobileFilterToggle');
+            const mobileFilterDropdown = document.getElementById('mobileFilterDropdown');
+            const allFilterButtons = document.querySelectorAll('.filter-btn');
+            
+            // Toggle mobile filter dropdown
+            if (mobileFilterToggle && mobileFilterDropdown) {
+                mobileFilterToggle.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    mobileFilterDropdown.classList.toggle('active');
+                });
+                
+                // Close dropdown when clicking outside
+                document.addEventListener('click', function(event) {
+                    if (!event.target.closest('.mobile-filter-container')) {
+                        mobileFilterToggle.classList.remove('active');
+                        mobileFilterDropdown.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Filter functionality (works for both desktop and mobile)
+            function setupFiltering() {
+                const galleryItems = document.querySelectorAll('.gallery-item');
+                
+                allFilterButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        // Remove active class from all buttons
+                        allFilterButtons.forEach(btn => btn.classList.remove('active'));
+                        
+                        // Add active class to clicked button
+                        this.classList.add('active');
+                        
+                        // Update mobile toggle text if this is a mobile filter button
+                        if (this.parentElement.classList.contains('mobile-filter-dropdown')) {
+                            const toggleText = mobileFilterToggle.querySelector('span');
+                            toggleText.textContent = this.textContent;
+                            
+                            // Close dropdown after selection on mobile
+                            mobileFilterToggle.classList.remove('active');
+                            mobileFilterDropdown.classList.remove('active');
+                        }
+                        
+                        const filterValue = this.getAttribute('data-filter');
+                        
+                        // Filter gallery items
+                        galleryItems.forEach(item => {
+                            const itemCategory = item.getAttribute('data-category');
+                            
+                            if (filterValue === 'all' || filterValue === itemCategory) {
+                                item.style.display = 'block';
+                                setTimeout(() => {
+                                    item.style.opacity = '1';
+                                    item.style.transform = 'scale(1)';
+                                }, 50);
+                            } else {
+                                item.style.opacity = '0';
+                                item.style.transform = 'scale(0.8)';
+                                setTimeout(() => {
+                                    item.style.display = 'none';
+                                }, 300);
+                            }
+                        });
+                    });
+                });
+            }
+            
+            // Initialize filtering
+            setupFiltering();
+            
+            // Close mobile dropdown when a filter is selected
+            const mobileFilterButtons = document.querySelectorAll('.mobile-filter-dropdown .filter-btn');
+            mobileFilterButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    mobileFilterToggle.classList.remove('active');
+                    mobileFilterDropdown.classList.remove('active');
                 });
             });
         });
